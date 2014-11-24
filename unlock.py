@@ -18,7 +18,6 @@ def unlock(file):
 		infor_s = infor.split()
 
 		if infor_s[4].lower() == "l":
-	#		print "you are locked"
 			infor_s[4] = "U"
 			new_informations.append('\t'.join(infor_s))
 			continue
@@ -28,7 +27,6 @@ def unlock(file):
 	f_personinfo.write("\n".join(new_informations))
 	f_personinfo.flush()
 	f_personinfo.close()
-	
 	
 if __name__ == "__main__":
 	unlock('person.info')
