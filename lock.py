@@ -4,7 +4,16 @@
 If you input wrong password for three times,use this script to lock the account 
 """
 def islock(file):
-	pass	
+	f_person = open(file)
+	informations = f_person.readlines()
+	f_person.close()
+
+	for info in informations[1:]:
+		info_s = info.strip().split()	
+		if (info_s[4].lower() == "l"):
+			return True
+		else:
+			return False
 
 	
 
@@ -30,3 +39,4 @@ def lock(file):
 	
 if __name__ == "__main__":
 	lock('person.info')
+	print islock('person.info')

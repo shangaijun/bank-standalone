@@ -5,6 +5,11 @@ import sys
 import lock
 
 def login(user,password):
+	if(lock.islock('person.info') == True):
+		print "Your account is locked,please contact BANK to unlock"
+		sys.exit()
+	else:
+		pass
 	f_sec = open("sec.db")
 	r_user,r_pass=f_sec.readline().split()
 	counter=0
@@ -29,4 +34,3 @@ def login(user,password):
 
 if __name__=='__main__':
 	login(1,2)
-	pass
