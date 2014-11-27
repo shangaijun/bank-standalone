@@ -4,7 +4,7 @@ import getpass
 import sys
 import lock
 
-def login(user,password):
+def login():
 	if(lock.islock('person.info') == True):
 		print "Your account is locked,please contact BANK to unlock"
 		sys.exit()
@@ -15,7 +15,7 @@ def login(user,password):
 	counter=0
 	while True:
 		#user_input=getpass.getuser("Please input your username: ")
-		user_input=raw_input("Please input your username: ")
+		user_input=raw_input("Please input your username: ").strip()
 		pass_input = getpass.getpass("Please input your password: ")
 		if (user_input == r_user) and  (pass_input == r_pass):
 			return True
@@ -33,4 +33,4 @@ def login(user,password):
 
 
 if __name__=='__main__':
-	login(1,2)
+	print login()
